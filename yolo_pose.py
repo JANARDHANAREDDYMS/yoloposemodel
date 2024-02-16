@@ -21,7 +21,7 @@ no_of_persons = results[0].keypoints.conf.size(0)
 
 result_keypoint = results[0].keypoints
 result_head  = result_keypoint.data[0:no_of_persons]
-
+print(result_keypoint)
 print(f"No of persons detected: {no_of_persons}")
 
 for _ in range(no_of_persons):
