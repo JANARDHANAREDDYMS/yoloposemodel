@@ -30,12 +30,24 @@ for r in results:
     print(f"No of persons detected {int(no_of_persons)}")
 
     keypoint_data = r.keypoints
+    box_data = r.boxes
+
+
+
     
     for _ in range(int(no_of_persons)):
+        
         head_point = keypoint_data.xy[_][0].numpy()
         right_point = keypoint_data.xy[_][16].numpy()
 
+        tl_x = box_data.xyxy[_].numpy()
+        confidence = box_data.conf.numpy()
+
+        print(f"For Person {_+1}")
         print(f"Head Point: {head_point}, Right Toe Point: {right_point}")
+        print("Bounding box cordinates in terms of x,y,width,height")
+        print(tl_x)
+        print(f"Bounding box confidence: {round(confidence[_].item(),2)}")
 
     # print(r.keypoints)
     # print(r.boxes)
