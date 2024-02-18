@@ -5,19 +5,16 @@ from ultralytics import YOLO
 model = YOLO('yolov8n-pose.pt')
 
 # Predict with the model
-results = model("/Users/janardhanareddyms/Desktop/crowd_mall2.mp4", show=True,stream=True)
+results = model("/Users/janardhanareddyms/Desktop/crowd_mall.mp4", show=True,stream=True)
 
 
 
 # pattern = re.compile(r'\b(\d+)\s+persons\b')
 
-# # Iterate over the generator
 # for idx, r in enumerate(results, start=1):
     
-#     # Extract information about each frame
 #     frame_info = str(r)
     
-#     # Use regex to find the persons count
 #     match = pattern.search(frame_info)
     
 #     if match:
